@@ -5,7 +5,6 @@ import os
 import time
 import aiosqlite
 import platform
-import pkg_resources
 import datetime
 from discord import Embed, ButtonStyle
 from discord.ui import Button, View
@@ -93,7 +92,6 @@ class Stats(commands.Cog):
         total_files, total_lines, total_words = self.gather_file_stats('.')
         cpu_info = psutil.cpu_freq()
         memory_info = psutil.virtual_memory()
-        total_libraries = sum(1 for _ in pkg_resources.working_set)
         channels_connected = sum(1 for vc in self.bot.voice_clients if vc)
         playing_tracks = sum(1 for vc in self.bot.voice_clients if vc.playing)
 
@@ -102,7 +100,7 @@ class Stats(commands.Cog):
         embed.add_field(name="<:icon_ping:1327829337461882913> Uptime", value=f"{uptime}", inline=False)
         embed.add_field(name="<:user:1329379728603353108> User Count", value=f"Humans: **{human_count}**   |   Bots: **{bot_count}**", inline=False)
         embed.add_field(name="<:file:1327842123906547713> Commands", value=f"Total: **{commands_count}**   |   Slash: **{slash_commands}**", inline=False)
-        embed.add_field(name="<:icons_channel:1327829380935843941> Libraries Used", value=f"Discord Library: **[discord.py](https://discordpy.readthedocs.io/en/stable/)**\nTotal Libraries: **{total_libraries}**", inline=False)
+        embed.add_field(name="<:icons_channel:1327829380935843941> Libraries Used", value=f"Discord Library: **[discord.py](https://discordpy.readthedocs.io/en/stable/)**", inline=False)
         embed.add_field(name="<:icons_discordbotdev:1327829391178338304> Codebase Stats", value=f"Total Python Files: **{total_files}**\nTotal Lines: **{total_lines}**\nTotal Words: **{total_words}**", inline=False)
         embed.add_field(name="<:icons_music:1327829459729911900> Music Stats", value=f"Currently Connected: **{channels_connected}**\nCurrently Playing: **{playing_tracks}**\nTotal Songs Played: **{self.total_songs_played}**", inline=False)
         embed.set_footer(text="Powered by Quantum X Development™", icon_url=self.bot.user.display_avatar.url)
