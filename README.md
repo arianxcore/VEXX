@@ -1,4 +1,4 @@
-# Welcome to Axon X Code
+# Welcome to VEXX Code
 
 - Get Started
 -> Make sure the verison of py is 3.11
@@ -23,10 +23,4 @@ Only 2 step is requires to set this bot!
 
 # That all 
 
-Enjoy the code to its fullest Preovided By CodeX Developement!
-
-<3
-
-> Main Creds goes to Olympus bot Thanks for this wonderful code and journey!
-
-https://github.com/sonujana26/olympus-bot/blob/main/LICENSE.txt
+zayan on top
